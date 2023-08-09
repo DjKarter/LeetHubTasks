@@ -16,9 +16,10 @@ let romanToInt = function(s) {
     if (s.length === 1) {
         return dict[s[0]];
     }
-    let i = 0;
 
+    let i = 0;
     let ans = 0;
+
     while(i !== s.length - 1) {
         if (dict[s[i]] >= dict[s[i + 1]]) {
             ans += dict[s[i]];
