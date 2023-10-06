@@ -3,9 +3,11 @@
  * @return {number}
  */
 let integerBreak = function(n) {
+    if (n === 2)
+        return 1;
     let ans = 1;
     const repressor = (sum, mult, nums) => {
-        for (let i = 1; i < n; ++i) {
+        for (let i = 1; i <= Math.ceil(Math.sqrt(n)); ++i) {
 
             if (sum + i < n && i >= nums.at(-1)) {
                 repressor(sum + i, mult * i, [...nums, i]);
